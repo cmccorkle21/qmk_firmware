@@ -16,4 +16,5 @@
 #define RGB_MATRIX_CAPS_LOCK_INDEX 30
 
 //mcc changes
-#define TAPPING_TERM 100
+#define TAPPING_TERM 120
+#define PERMISSIVE_HOLD
