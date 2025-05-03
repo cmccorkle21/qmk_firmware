@@ -3,3 +3,4 @@ UF2CONV_ARGS = --device-type $(UF2_DEVICE_TYPE_ID)
 
 SRC += lib/common.c
 RAW_ENABLE = yes
+RGBLIGHT_ENABLE = no

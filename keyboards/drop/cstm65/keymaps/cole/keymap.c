@@ -16,6 +16,17 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return state;
 }
 
+#include QMK_KEYBOARD_H
+#include "rgb_matrix.h"
+//lighting
+bool rgb_matrix_indicators_user(void) {
+    uint8_t layer = get_highest_layer(layer_state);
+    if (layer == 1) {
+        rgb_matrix_set_color(0, 255, 0, 0);  // index 0, red
+    }
+    return true;
+}
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //    ┌──────┬──────┬──────┬───┬───┬───┬───┬───┬───┬───┬───┬───────────┬──────┬─────────────┬──────┐
 //    │  `   │  1   │  2   │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │     -     │  =   │    bspc     │ del  │
@@ -41,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //    ├──────┴─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┬──────┼─────┤
 //    │            │     │     │     │     │     │     │  _  │  {  │  }  │  +  │     │     │      │     │
 //    ├────────────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┴──────┼─────┤
-//    │            │     │     │     │  %  │  ^  │  $  │  -  │  [  │  ]  │  =  │     │  RGB_TOG   │     │
+//    │            │     │     │     │  %  │  ^  │  $  │  -  │  [  │  ]  │  =  │     │  RM_TOGG   │     │
 //    ├────────────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┴─────┬──────┼─────┤
 //    │            │     │     │     │     │     │     │     │     │     │     │           │ volu │     │
 //    ├──────┬─────┼─────┼─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┼─────┼─────┬─────┼──────┼─────┤
@@ -50,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [1] = LAYOUT_65_ansi_blocker(
   QK_BOOT , KC_F1   , KC_F2   , KC_F3   , KC_F4   , KC_F5   , KC_F6   , KC_F7   , KC_F8   , KC_F9   , KC_F10  , KC_F11  , KC_F12  ,           KC_TRNS , KC_TRNS,
        KC_TRNS      , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_UNDS , KC_LCBR , KC_RCBR , KC_PLUS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS,
-       KC_TRNS      , KC_TRNS , KC_TRNS , KC_TRNS , KC_PERC , KC_CIRC , KC_DLR  , KC_MINS , KC_LBRC , KC_RBRC , KC_EQL  , KC_TRNS ,      RGB_TOG      , KC_TRNS,
+       KC_TRNS      , KC_TRNS , KC_TRNS , KC_TRNS , KC_PERC , KC_CIRC , KC_DLR  , KC_MINS , KC_LBRC , KC_RBRC , KC_EQL  , KC_TRNS ,      RM_TOGG      , KC_TRNS,
        KC_TRNS      , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS ,      KC_TRNS      , KC_VOLU , KC_TRNS,
   KC_TRNS , KC_TRNS , KC_TRNS ,                                    EE_CLR                                     , KC_TRNS , KC_TRNS , KC_TRNS , KC_VOLD , KC_TRNS
 )
