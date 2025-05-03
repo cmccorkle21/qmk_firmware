@@ -16,14 +16,30 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return state;
 }
 
+//lighting
 #include QMK_KEYBOARD_H
 #include "rgb_matrix.h"
-//lighting
+
+extern const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS];
+
 bool rgb_matrix_indicators_user(void) {
     uint8_t layer = get_highest_layer(layer_state);
     if (layer == 1) {
-        rgb_matrix_set_color(0, 255, 0, 0);  // index 0, red
+        // Loop over all key positions
+        for (uint8_t row = 0; row < MATRIX_ROWS; row++) {
+            for (uint8_t col = 0; col < MATRIX_COLS; col++) {
+                uint16_t keycode = keymaps[1][row][col];  // layer 1
+
+                if (keycode != KC_TRNS && keycode != KC_NO) {
+                    uint8_t led_index = g_led_config.matrix_co[row][col];
+                    if (led_index != NO_LED) {
+                        rgb_matrix_set_color(led_index, 255, 0, 0);  // Red
+                    }
+                }
+            }
+        }
     }
+
     return true;
 }
 
