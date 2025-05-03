@@ -22,6 +22,7 @@
       "KC_EQL",
       "KC_BSPC",
       "KC_DEL",
+
       "KC_TAB",
       "KC_Q",
       "KC_W",
@@ -37,6 +38,7 @@
       "KC_RBRC",
       "KC_BSLS",
       "KC_HOME",
+
       "LT(1,KC_ESC)",
       "KC_A",
       "KC_S",
@@ -50,7 +52,8 @@
       "KC_SCLN",
       "KC_QUOT",
       "KC_ENT",
-      "KC_PGUP",
+      "KC_PGDN",
+
       "SC_LSPO",
       "KC_Z",
       "KC_X",
@@ -64,7 +67,8 @@
       "KC_SLSH",
       "SC_RSPC",
       "KC_UP",
-      "KC_PGDN",
+      "KC_B",
+
       "KC_LCTL",
       "KC_LGUI",
       "KC_LALT",
@@ -91,6 +95,21 @@
       "KC_F12",
       "KC_TRNS",
       "KC_TRNS",
+
+      "KC_TRNS",
+      "KC_TRNS",
+      "KC_TRNS",
+      "KC_TRNS",
+      "KC_TRNS",
+      "KC_TRNS",
+      "KC_TRNS",
+      "KC_UNDS",
+      "KC_LCBR",
+      "KC_RCBR",
+      "KC_PLUS",
+      "KC_TRNS",
+      "KC_TRNS",
+      "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
@@ -104,20 +123,6 @@
       "KC_RBRC",
       "KC_EQL",
       "KC_TRNS",
-      "KC_TRNS",
-      "KC_TRNS",
-      "KC_TRNS",
-      "KC_TRNS",
-      "KC_TRNS",
-      "KC_TRNS",
-      "KC_TRNS",
-      "KC_TRNS",
-      "KC_TRNS",
-      "KC_TRNS",
-      "KC_UNDS",
-      "KC_LCBR",
-      "KC_RCBR",
-      "KC_PLUS",
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
@@ -145,5 +150,5 @@
       "KC_TRNS"
     ]
   ],
-  "author": ""
+  "author": "cole"
 }
